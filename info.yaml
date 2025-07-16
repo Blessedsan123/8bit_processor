@@ -12,17 +12,18 @@ project:
 
   source_files:
     - "processor.v"
+    - "tt_um_myprocessor.v"
 
 pinout:
   # Inputs
-  ui[0]: "Unused"
-  ui[1]: "Unused"
-  ui[2]: "Unused"
-  ui[3]: "Unused"
-  ui[4]: "Unused"
-  ui[5]: "Unused"
-  ui[6]: "Unused"
-  ui[7]: "Unused"
+  ui[0]: ""
+  ui[1]: ""
+  ui[2]: ""
+  ui[3]: ""
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
 
   # Outputs
   uo[0]: "ALU OUT[0]"
