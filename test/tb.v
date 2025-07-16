@@ -30,11 +30,6 @@ module tb;
     // Apply reset
     #20 rst_n = 1;
 
-    // Run simulation for some time
-    #50;
-
-    // End simulation
-    $finish;
   end
 
 endmodule
