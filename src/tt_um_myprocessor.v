@@ -1,7 +1,6 @@
 module tt_um_myprocessor (
     input  wire clk,              // Clock from Tiny Tapeout
     input  wire rst_n,            // Active-low reset
-    input  wire [7:0] ui_in,      // 8-bit input
     output wire [7:0] uo_out,     // 8-bit output
     );
 
@@ -34,9 +33,6 @@ module tt_um_myprocessor (
     // Choose what to output (here we show ALU result)
     assign uo_out = alu_out;
 
-    // Unused bidirectional pins
-    assign uio = 8'bz;
-    assign uio_oe = 8'b0;
 
 endmodule
 
