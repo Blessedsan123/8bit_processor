@@ -11,8 +11,7 @@ project:
   top_module:   "tt_um_myprocessor"
 
   source_files:
-    - "processor.v"
-    - "tt_um_myprocessor.v"
+    - "project.v"
 
 pinout:
   # Inputs
