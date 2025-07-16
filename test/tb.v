@@ -5,19 +5,13 @@ module tb;
   // Testbench signals
   reg clk;
   reg rst_n;
-  reg [7:0] ui_in;
   wire [7:0] uo_out;
-  wire [7:0] uio;
-  wire [7:0] uio_oe;
 
   // Instantiate the top-level wrapper
   tt_um_myprocessor dut (
     .clk(clk),
     .rst_n(rst_n),
-    .ui_in(ui_in),
-    .uo_out(uo_out),
-    .uio(uio),
-    .uio_oe(uio_oe)
+    .uo_out(uo_out)
   );
 
   // Clock generation: 10ns period (100 MHz)
@@ -26,13 +20,12 @@ module tb;
   // Test sequence
   initial begin
     // Monitor key signals
-    $monitor("Time = %0t | clk = %b | rst_n = %b | ui_in = %h | uo_out = %h", 
-              $time, clk, rst_n, ui_in, uo_out);
+    $monitor("Time = %0t | clk = %b | rst_n = %b | uo_out = %h", 
+              $time, clk, rst_n, uo_out);
 
     // Initialize
     clk = 0;
     rst_n = 0;
-    ui_in = 8'b0;
 
     // Apply reset
     #20 rst_n = 1;
