@@ -184,7 +184,8 @@ endmodule
 
 module tt_um_myprocessor (
     input  wire clk,              // Clock from Tiny Tapeout
-    input  wire rst_n,            // Active-low reset
+    input  wire rst_n, 
+    input wire ena,// Active-low reset
     output wire [7:0] uo_out     // 8-bit output
     );
 
