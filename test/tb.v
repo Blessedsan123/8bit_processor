@@ -2,15 +2,23 @@
 
 module tb;
 
+    initial begin
+    $dumpfile("tb.vcd");
+    $dumpvars(0, tb);
+    #1;
+  end
+
   // Testbench signals
   reg clk;
   reg rst_n;
+  reg ena;
   wire [7:0] uo_out;
 
   // Instantiate the top-level wrapper
   tt_um_myprocessor dut (
     .clk(clk),
     .rst_n(rst_n),
+    .ena(ena),
     .uo_out(uo_out)
   );
 
