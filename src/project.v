@@ -221,7 +221,7 @@ module tt_um_myprocessor (
 
     // Choose what to output (here we show ALU result)
     assign uo_out = alu_out;
-  wire _unused = &{uio_oe,uio_ot,uio_in,ui_in,1'b0};
+  // wire _unused = &{uio_oe,uio_ot,uio_in,ui_in,1'b0};
 
 endmodule
 
