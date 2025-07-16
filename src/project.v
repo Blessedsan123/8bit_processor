@@ -186,7 +186,7 @@ module tt_um_myprocessor (
     input  wire clk,              // Clock from Tiny Tapeout
     input  wire rst_n, 
     input wire ena,// Active-low reset
-   input  wire [7:0] ui_in,  
+    input  wire [7:0] ui_in,  
     input  wire [7:0] uio_in,   // IOs: Input path
     output wire [7:0] uio_out,
     output wire [7:0] uo_out, 
@@ -205,22 +205,12 @@ module tt_um_myprocessor (
     wire [7:0] alu_out;
 
     // Instantiate your processor
-    processor cpu (
-        .clk(clk),
-        .rst(rst_n),
-        .addr_out(addr_out),
-        .instruction(instruction),
-        .opcode(opcode),
-        .reg_write(reg_write),
-        .pc_src(pc_src),
-        .alu_op(alu_op),
-        .data_out_source_reg1(data_out_source_reg1),
-        .data_out_source_reg2(data_out_source_reg2),
-        .alu_out(alu_out)
-    );
+    processor cpu (clk,rst_n,addr_out,instruction,opcode,reg_write,pc_src,alu_op,data_out_source_reg1,data_out_source_reg2,alu_out);
 
     // Choose what to output (here we show ALU result)
     assign uo_out = alu_out;
+    assign uio_out  = 8'b00000000; // Not used
+    assign uio_oe   = 8'b00000000; // All inputs
   // wire _unused = &{uio_oe,uio_ot,uio_in,ui_in,1'b0};
 
 endmodule
