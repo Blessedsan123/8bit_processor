@@ -3,9 +3,7 @@ module tt_um_myprocessor (
     input  wire rst_n,            // Active-low reset
     input  wire [7:0] ui_in,      // 8-bit input
     output wire [7:0] uo_out,     // 8-bit output
-    inout  wire [7:0] uio,        // Not used
-    output wire [7:0] uio_oe      // Not used
-);
+    );
 
     // Internal connections to your processor
     wire [3:0] addr_out;
